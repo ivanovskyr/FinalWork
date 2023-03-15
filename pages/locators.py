@@ -17,16 +17,11 @@ class AuthLocators:
     AUTH_MAIL = (By.ID, "oidc_mail")
     AUTH_GOOGLE = (By.ID, "oidc_google")
     AUTH_YANDEX = (By.ID, "oidc_ya")
-#    AUTH_ERR = (By.ID, "form-error-message")
 
 class RegLocators:
-    REG_FNAME = (By.NAME, "firstName")
-    REG_LNAME = (By.NAME, "lastName")
-    REG_REGION = (By.CLASS_NAME, "lastName")
-    REG_EMAIL = (By.ID, "address")
-    REG_INPUT_PASS = (By.ID, "password")
-    REG_INPUT_PASS_CONFIRM = (By.ID, "password-confirm")
-    REG_BTN = (By.NAME, "register")
+     TO_REG = (By.ID, "kc-register")
 
 class ForgetLocators:
-    pass
+    FORGET_BTN = (By.NAME, 'reset')
+    CAPCHA = (By.ID, 'captcha')
+
