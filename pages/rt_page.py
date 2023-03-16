@@ -1,8 +1,7 @@
 from .base_pages import BasePage
 from .locators import AuthLocators
 from .locators import RegLocators
-from .locators import ForgetLocators
-import time, os
+import os
 
 class AuthPage(BasePage):
     def __init__(self, driver, timeout=10):
@@ -81,26 +80,6 @@ class RegPage(BasePage):
 
     def go_to_reg(self):
         self.to_reg.click()
-    # def reg_enter_first_name(self, value):
-    #     self.first_name.clear()
-    #     self.first_name.send_keys(value)
-    # def reg_enter_last_name(self, value):
-    #     self.last_name.clear()
-    #     self.last_name.send_keys(value)
-    # def reg_enter_email(self, value):
-    #     self.email.clear()
-    #     self.email.send_keys(value)
-    # def reg_enter_pass_and_confirm(self, value):
-    #     self.input_pass.clear()
-    #     self.input_pass.send_keys(value)
-    #     self.input_pass_confirm.clear()
-    #     self.input_pass_confirm.send_keys(value)
-    # def reg_enter_pass(self, value):
-    #     self.input_pass.clear()
-    #     self.input_pass.send_keys(value)
-    # def reg_enter_pass_confirm(self, value):
-    #     self.input_pass_confirm.clear()
-    #     self.input_pass_confirm.send_keys(value)
 
 class ForgotPage(BasePage):
     def __init__(self, driver, timeout=10):
@@ -117,5 +96,3 @@ class ForgotPage(BasePage):
         self.auth_link = '/auth/realms/b2c/login-actions/authenticate'
         self.recovery_text = 'Код подтверждения отправлен на адрес p*********@mail.ru'
         self.valid_mail = 'put-inmail@mail.ru'
-        # self.fgt_btn = driver.find_element(*ForgetLocators.FORGET_BTN)
-        # self.captha = driver.find_element(*ForgetLocators.CAPCHA)

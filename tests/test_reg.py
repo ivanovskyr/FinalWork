@@ -3,16 +3,6 @@ import time
 from selenium.webdriver.common.by import By
 from pages.rt_page import RegPage
 
-
-# REG_FIRST_NAME = (By.XPATH, '//input[@name="firstName"]')
-# REG_LNAME = (By.XPATH, '//input[@name="lastName"]')
-# REG_REGION = (By.CLASS_NAME, "lastName")
-# REG_EMAIL = (By.ID, "address")
-# REG_INPUT_PASS = (By.ID, "password")
-# REG_INPUT_PASS_CONFIRM = (By.ID, "password-confirm")
-# REG_BTN = (By.NAME, "register")
-
-
 def test_reg_valid(selenium):
     page = RegPage(selenium)
     page.go_to_reg()
@@ -155,14 +145,7 @@ def test_personal_data_negative(selenium, fst_name, lname, region_mark, email_ma
     input_pass_confirm.send_keys(pass_cmark)
     btn.click()
     confirm = page.driver.find_element(By.XPATH, '//*[@id="page-right"]/div/div/h1').text
-    # name_err = page.driver.find_element(By.XPATH, '//*[@id="page-right"]/div/div/div/form/div[1]/div[1]/span').text
-    # fam_err = page.driver.find_element(By.XPATH, '//*[@id="page-right"]/div/div/div/form/div[1]/div[2]/span').text
-    # email_err = page.driver.find_element(By.XPATH, '//*[@id="page-right"]/div/div/div/form/div[3]/span/text()')
-    # pass_err = page.driver.find_element(By.XPATH, '//*[@id="page-right"]/div/div/div/form/div[4]/div[1]/span').text
-    # pass_c_err = page.driver.find_element(By.XPATH, '//*[@id="page-right"]/div/div/div/form/div[4]/div[2]/span').text
     assert page.get_relative_link() == page.login_link and confirm != 'Подтверждение email'
-           # and (name_err == page.fio_err or fam_err == page.fio_err or email_err == page.email_err
-           #  or pass_err == page.pass_err or pass_c_err == page.pass_err)
 
 pass_32 = '!"№;QWas' * 32 # 256 символов
 pass_33 = '!"№;QWas' * 33 # 264 символа
